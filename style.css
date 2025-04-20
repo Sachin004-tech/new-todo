@@ -8,7 +8,9 @@
 body, html {
   height: 100%;
   font-family: 'Segoe UI', Tahoma, sans-serif;
-  background: linear-gradient(to right, #e3f2fd, #fce4ec);
+  /* background: linear-gradient(to right, #e3f2fd, #fce4ec); */
+  background-color: #0093E9;
+  background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 33%, #33989b 60%, #4e72c2 73%,#73ccc5 86%);
   color: #333;
   transition: all 0.3s ease-in-out;
 }
@@ -16,7 +18,7 @@ body, html {
 /* Navbar */
 nav {
   height: 60px;
-  background-color: #4CAF50;
+  background-color: #8B5DFF;
   color: white;
   display: flex;
   align-items: center;
@@ -64,39 +66,67 @@ nav {
   transform: translateY(-5px);
 }
 
-.task-buttons {
+/* .task-buttons {
   display: flex;
   justify-content: space-between;
   margin-top: 10px;
-}
+} */
 
-.task-buttons button {
+/* .task-buttons button {
   padding: 6px 10px;
   border: none;
   border-radius: 8px;
   font-size: 14px;
   cursor: pointer;
   transition: 0.3s ease;
+} */
+
+.task-buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-top: 12px;
 }
 
+.task-buttons button {
+  width: 36px;
+  height: 36px;
+  background-color: #f0f0f0;
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.task-buttons button:hover {
+  transform: scale(1.15);
+}
+
+
+
 .task-buttons .complete {
-  background: #4caf50;
+  background: #cbf078;
   color: white;
 }
 
 .task-buttons .update {
-  background: #ffc107;
+  background: #f1b963;
   color: black;
 }
 
 .task-buttons .delete {
-  background: #f44336;
+  background: #9cd3d3;
   color: white;
 }
 
-.task-buttons button:hover {
+/* .task-buttons button:hover {
   transform: scale(1.05);
-}
+} */
 
 /* Completed Task Cards */
 .completed-task {
@@ -182,7 +212,6 @@ body.dark-mode .completed-task {
 }
 
 
-
 /* Responsive Design */
 @media (max-width: 1200px) {
   .todo-form {
@@ -202,7 +231,7 @@ body.dark-mode .completed-task {
     width: 100%;
     border: none;
     padding: 10px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
   }
 
   main {
@@ -245,8 +274,14 @@ body.dark-mode .completed-task {
   }
 
   .task-buttons button {
+    width: 30px;
+    height: 30px;
     font-size: 12px;
-    padding: 5px 8px;
+  }
+
+  .task-buttons lord-icon {
+    width: 18px !important;
+    height: 18px !important;
   }
 }
 
