@@ -14,19 +14,48 @@ document.getElementById("addTaskBtn").addEventListener("click", function () {
   const taskCard = document.createElement("div");
   taskCard.className = "sidebar-task";
 
-  taskCard.innerHTML = `
-    <h3>${title}</h3>
-    <p>${desc}</p>
-    <p><strong>Due:</strong> ${date} @ ${time}</p>
-    <p><strong>Priority:</strong> ${priority}</p>
-    <div class="task-buttons">
-      <button class="complete">✅</button>
-      <button class="update">✏️</button>
-      <button class="delete">🗑️</button>
-    </div>
-  `;
+  // taskCard.innerHTML = `
+  //   <h3>${title}</h3>
+  //   <p>${desc}</p>
+  //   <p><strong>Due:</strong> ${date} @ ${time}</p>
+  //   <p><strong>Priority:</strong> ${priority}</p>
+  //   <div class="task-buttons">
+  //     <button class="complete">✅</button>
+  //     <button class="update">✏️</button>
+  //     <button class="delete">🗑️</button>
+  //   </div>
+  // `;
 
-  // Buttons functionality
+  taskCard.innerHTML = `
+  <h3>${title}</h3>
+  <p>${desc}</p>
+  <p><strong>Due:</strong> ${date} @ ${time}</p>
+  <p><strong>Priority:</strong> ${priority}</p>
+  <div class="task-buttons">
+    <button class="complete">
+      <lord-icon
+    src="https://cdn.lordicon.com/hrtsficn.json"
+    trigger="hover"
+    style="width:250px;height:250px">
+</lord-icon>
+    </button>
+    <button class="update">
+      <lord-icon
+    src="https://cdn.lordicon.com/nwfpiryp.json"
+    trigger="hover"
+    state="hover-line"
+    colors="primary:#e8b730,secondary:#545454,tertiary:#30c9e8,quaternary:#3a3347"
+    style="width:250px;height:250px">
+</lord-icon>
+    </button>
+    <button class="delete">
+     <lord-icon src="https://cdn.lordicon.com/nhqwlgwt.json" trigger="hover" colors="primary:#121331,secondary:#30c9e8,tertiary:#646e78,quaternary:#ebe6ef" style="width:250px;height:250px">
+</lord-icon>
+    </button>
+  </div>
+`;
+
+  
   const completeBtn = taskCard.querySelector(".complete");
   const updateBtn = taskCard.querySelector(".update");
   const deleteBtn = taskCard.querySelector(".delete");
@@ -58,7 +87,7 @@ document.getElementById("addTaskBtn").addEventListener("click", function () {
 
   document.getElementById("sidebarTasks").appendChild(taskCard);
 
-  // Clear form
+
   document.getElementById("taskTitle").value = "";
   document.getElementById("taskDesc").value = "";
   document.getElementById("taskDueDate").value = "";
